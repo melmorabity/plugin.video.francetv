@@ -9,8 +9,8 @@
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">france•tv</summary>
-    <summary lang="fr_FR">france•tv</summary>
+    <summary lang="en_GB">france.tv</summary>
+    <summary lang="fr_FR">france.tv</summary>
     <description lang="en_GB">Live and catchup TV for France Télévisions channels</description>
     <description lang="fr_FR">Direct et replay TV des chaînes France Télévisions</description>
     <disclaimer lang="en_GB">Some streams may be georestricted to France</disclaimer>
