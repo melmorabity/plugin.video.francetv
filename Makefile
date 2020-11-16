@@ -14,7 +14,7 @@ ICON_SIZE = 512
 FANART_WIDTH = 1280
 
 KODI_ADDON_DIR = $(HOME)/.kodi/addons
-KODI_BRANCH = leia
+KODI_BRANCH = matrix
 
 
 all: package

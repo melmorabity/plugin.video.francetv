@@ -8,7 +8,7 @@ Notice that some streams may be georestricted to France, or to overseas France.
 Dependencies
 ------------
 
-* Kodi 18 or higher
+* Kodi 19 or higher
 * script.module.beautifulsoup4
 * script.module.inputstreamhelper
 * script.module.requests
