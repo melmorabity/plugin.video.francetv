@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+*.zip
+*~
+.mypy_cache
+\#*\#
+__pycache__
+resources/icon.png
+resources/fanart.jpg
+resources/media/*.png

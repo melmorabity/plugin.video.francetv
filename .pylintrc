@@ -1,0 +1,13 @@
+[FORMAT]
+max-line-length = 79
+
+[MESSAGES CONTROL]
+disable =
+    missing-class-docstring,
+    missing-function-docstring,
+    missing-module-docstring,
+    raise-missing-from, # Python 2
+
+[SIMILARITIES]
+ignore-imports = yes
+min-similarity-lines = 15
