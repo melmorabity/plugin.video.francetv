@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plugin.video.francetv\n"
-"PO-Revision-Date: 2020-11-15 12:00+0200\n"
+"PO-Revision-Date: 2020-11-25 12:00+0200\n"
 "Last-Translator: melmorabity\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,6 +32,18 @@ msgstr "Catégories"
 msgctxt "#30005"
 msgid "Search"
 msgstr "Recherche"
+
+msgctxt "#30101"
+msgid "All TV shows"
+msgstr "Tous les programmes"
+
+msgctxt "#30102"
+msgid "All videos"
+msgstr "Toutes les vidéos"
+
+msgctxt "#30103"
+msgid "Next page"
+msgstr "Page suivante"
 
 msgctxt "#30201"
 msgid "Playback failed"

@@ -19,6 +19,7 @@
 from __future__ import unicode_literals
 import logging
 import os
+import re
 
 try:
     from typing import Dict
@@ -80,13 +81,24 @@ class FranceTVAddon:
         # Parameter string starts with a '?'
         return dict(parse_qsl(params[1:])) if params else {}
 
+    def _localize(self, label):
+        # type: (Text) -> Text
+
+        return re.sub(
+            r"\$LOCALIZE\[(\d+)\]",
+            lambda m: self._ADDON.getLocalizedString(int(m.group(1))),
+            label,
+        )
+
     def _add_listitem(self, parsed_item):
         # type: (ParsedItem) -> None
 
         is_folder = parsed_item.url.get("mode") != "watch"
 
         _LOGGER.debug("Add ListItem %s", parsed_item)
-        listitem = ListItem(label=parsed_item.label, offscreen=True)
+        listitem = ListItem(
+            label=self._localize(parsed_item.label), offscreen=True
+        )
         listitem.setInfo("video", parsed_item.info)
 
         # Set fallback fanart
