@@ -25,7 +25,7 @@
       <icon>resources/icon.png</icon>
       <fanart>resources/fanart.jpg</fanart>
     </assets>
-    <news>v2.0.0 (2020-11-15)
+    <news>v2.0.0 (2020-11-27)
     - Complete rewrite for france.tv mobile API switch
     - Addon now follows the france.tv mobile application clickstream in terms of ergonomy
 

@@ -465,27 +465,27 @@ class FranceTV:
             # Add "all TV shows"/"all programs" item
             if parent_item_type != "program":
                 yield ParsedItem(
-                    "Tous les programmes",
+                    "$LOCALIZE[30101]",
                     {
                         "mode": "collection",
                         "path": "apps/regions/{}/programs".format(
                             collection_id
                         ),
                     },
-                    {"plot": "Tous les programmes"},
+                    {"plot": ""},
                     {"icon": _ALL_TV_SHOWS_ICON},
                     {"SpecialSort": "bottom"},
                 )
 
             yield ParsedItem(
-                "Toutes les vidéos",
+                "$LOCALIZE[30102]",
                 {
                     "mode": "collection",
                     "path": "generic/taxonomy/{}/contents".format(
                         collection_id
                     ),
                 },
-                {"plot": "Toutes les vidéos"},
+                {"plot": ""},
                 {"icon": _ALL_VIDEOS_ICON},
                 {"SpecialSort": "bottom"},
             )
@@ -497,7 +497,7 @@ class FranceTV:
             and cursor.get("last")
         ):
             # Add "next page" item
-            label = "Page suivante ({}/{})".format(
+            label = "$LOCALIZE[30103] ({}/{})".format(
                 cursor["next"] + 1, cursor["last"] + 1
             )
             yield ParsedItem(
@@ -506,7 +506,7 @@ class FranceTV:
                     "mode": "collection",
                     "path": update_url_params(path, page=cursor["next"]),
                 },
-                {"plot": label},
+                {"plot": ""},
                 {"icon": _NEXT_PAGE_ICON},
                 {"SpecialSort": "bottom"},
             )
