@@ -43,7 +43,7 @@ try:
     Collection = List[Item]
 
     Art = Dict[Text, Optional[Text]]  # pylint: disable=unsubscriptable-object
-    Url = Dict[Text, Text]
+    Url = Dict[Text, Union[int, Text]]
 
     ParsedItem = NamedTuple(
         "ParsedItem",
@@ -137,7 +137,8 @@ class FranceTV:
         # type: (Text) -> Union[Item, Collection]
 
         return self._session.get(
-            "{}/{}".format(self._API_URL, path), params={"platform": "apps"},
+            "{}/{}".format(self._API_URL, path),
+            params={"platform": "apps"},
         ).json()
 
     @staticmethod
@@ -363,7 +364,10 @@ class FranceTV:
                 info["cast"] = cast
         elif item.get("presenter"):
             info["cast"] = [
-                (p, "Présentateur",)
+                (
+                    p,
+                    "Présentateur",
+                )
                 for p in item["presenter"]
                 .replace("Présenté par ", "")
                 .rstrip(".")
@@ -446,7 +450,10 @@ class FranceTV:
             )
             yield ParsedItem(
                 "Culturebox",
-                {"mode": "collection", "path": "apps/categories/spectacles-et-culture"},
+                {
+                    "mode": "collection",
+                    "path": "apps/categories/spectacles-et-culture",
+                },
                 {"plot": "Culturebox"},
                 {"icon": _CHANNEL_ICONS["culturebox"]},
                 {},
