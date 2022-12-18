@@ -179,7 +179,8 @@ class FranceTV:
 
         art = {}  # type: Art
 
-        channel_icon = _CHANNEL_ICONS.get(FranceTV._get_channel_id(item))
+        channel = FranceTV._get_channel_id(item)
+        channel_icon = _CHANNEL_ICONS.get(channel)
         art.setdefault("icon", channel_icon)
 
         # Use channel logo as thumb for live videos
@@ -190,7 +191,7 @@ class FranceTV:
 
         # Artwork provided by the france.tv API is really bad for
         # channels
-        if item_type == "channel":
+        if item_type == "channel" and channel:
             return art
 
         for image in item.get("images") or []:
