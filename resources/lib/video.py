@@ -84,11 +84,11 @@ class FranceTVVideo:
             },
         ).json()
 
-        token = data.get("video", {}).get("token")
-        if not token:
-            raise FranceTVVideoException()
-
-        video_url = self._session.get(token).json().get("url")
+        video_url = self._session.get("https://hdfauth.ftven.fr/esi/TA",
+            params={
+                "format": "json",
+                "url": data.get("video", {}).get("url")
+            }).json().get("url")
         if not video_url:
             raise FranceTVVideoException()
 
