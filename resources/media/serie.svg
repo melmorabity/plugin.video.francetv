@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   fill="none"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="serie.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1"
+     inkscape:cx="256.5"
+     inkscape:cy="73.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     id="path1"
+     d="M 39.343747,134.46824 V 377.53177 H 104.51896 C 77.655283,344.27214 61.569607,302.02477 61.569607,256 c 0,-46.02477 16.085676,-88.27213 42.949353,-121.53176 z m 368.137303,0 c 26.8637,33.25963 42.94935,75.50699 42.94935,121.53176 0,46.02477 -16.08565,88.27211 -42.94935,121.53177 h 65.1752 V 134.46824 Z M 257.2214,182.59946 c -24.01583,0 -48.82694,15.78195 -48.82694,42.16128 0,26.37934 24.10166,33.34636 45.35773,39.08482 17.73296,4.77228 33.05781,8.903 33.05781,23.07347 0,12.06218 -12.32952,21.16356 -28.6826,21.16356 -17.20449,0 -30.94304,-8.54594 -39.45721,-15.74829 l -2.05285,-1.72694 -13.62452,17.06923 1.78908,1.63544 c 14.00434,12.91153 33.3817,20.02561 54.54969,20.02561 28.80138,0 49.73294,-18.23671 49.73294,-43.32782 0,-28.48734 -26.50866,-35.83543 -47.82344,-41.74956 h -0.0287 C 244.8006,239.7222 230.6203,235.77035 230.6203,224.4691 c 0,-13.52636 13.82569,-20.586 27.50708,-20.586 13.68139,0 21.37239,3.42872 32.58761,10.60179 l 2.20194,1.401 11.71502,-18.32727 -2.11019,-1.4353 c -7.4865,-5.06507 -23.3396,-13.52386 -45.30028,-13.52386 z"
+     style="fill:#ffffff;stroke-width:2.93186" />
+</svg>
