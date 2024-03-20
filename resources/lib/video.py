@@ -30,6 +30,8 @@ from requests import Response
 from requests import Session
 from requests.exceptions import HTTPError
 
+from resources.lib.utils import get_proxies
+
 
 class FranceTVVideoException(Exception):
     pass
@@ -41,6 +43,9 @@ class FranceTVVideo:
 
     def __init__(self):
         self._session = Session()
+        proxies = get_proxies()
+        if proxies:
+            self._session.proxies.update(proxies)
         self._session.hooks = {"response": [self._requests_raise_status]}
 
     def __enter__(self):

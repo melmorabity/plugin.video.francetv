@@ -18,6 +18,8 @@
 
 from __future__ import unicode_literals
 
+import json
+
 try:
     from urllib.parse import parse_qsl
     from urllib.parse import urlencode
@@ -37,6 +39,7 @@ except ImportError:
     pass
 
 from bs4 import BeautifulSoup
+import xbmc
 
 
 # Only capitalize the first letter
@@ -69,3 +72,50 @@ def update_url_params(url, **params):
     parsed_url[4] = urlencode(clean_params)
 
     return urlunparse(parsed_url)
+
+
+def jsonrpc(method, **params):
+    data = {
+        'jsonrpc': '2.0',
+        'id': 1,
+        'method': method,
+        'params': params,
+        }
+    data = json.dumps(data)
+    request = xbmc.executeJSONRPC(data)
+    return json.loads(request)
+
+
+def get_setting(key):
+    result = jsonrpc('Settings.GetSettingValue', setting=key)
+    return result.get('result', {}).get('value')
+
+
+def get_proxies():
+    proxy_active = get_setting('network.usehttpproxy')
+    proxy_type = get_setting('network.httpproxytype')
+    if not proxy_active:
+        return
+
+    proxy_types = ['http', 'socks4', 'socks4a', 'socks5', 'socks5h']
+
+    proxy = {
+        'scheme': proxy_types[proxy_type],
+        'server': get_setting('network.httpproxyserver'),
+        'port': get_setting('network.httpproxyport'),
+        'username': get_setting('network.httpproxyusername'),
+        'password': get_setting('network.httpproxypassword'),
+        }
+    if (proxy['username'] and proxy['password']
+            and proxy['server'] and proxy['port']):
+        proxy_address = (
+            '{scheme}://{username}:{password}@{server}:{port}'.format(**proxy))
+    elif proxy['username'] and proxy['server'] and proxy['port']:
+        proxy_address = '{scheme}://{username}@{server}:{port}'.format(**proxy)
+    elif proxy['server'] and proxy['port']:
+        proxy_address = '{scheme}://{server}:{port}'.format(**proxy)
+    elif proxy['server']:
+        proxy_address = '{scheme}://{server}'.format(**proxy)
+    else:
+        return
+    return {'http': proxy_address, 'https': proxy_address}
